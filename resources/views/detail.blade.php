@@ -5,7 +5,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="/css/showFood.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,20 +15,31 @@
     }
   </style>
   <body>
-  <h2>Danh sách sản phẩm</h2>
-  <button class="btn btn-primary btn-rounded"><a class="text" href="{{route('food.create')}}">Create new</a></button>
-        @csrf
-      <div class="container">
-      @foreach($food as $food)
-            <div class="product">
-                <img width="300px" height="300px" class="img-thumnail" src="/image/{{ $food['image']}}" alt=""/>
-                <p>{{$food['name']}}</p>
-                <p>{{$food['price']}}</p>
-                <button class="btn btn-primary btn-rounded"><a class="text" href="{{ route('food.show',$food->id)}}">View details</button>
+  <div class="container">
+        <h3 class="card-title">{{ $food['name'] }}</h3>
+        <h6 class="card-subtitle">image</h6>
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-6">
+                <div class="white-box text-center"><img width="300px" height="300px" class="img-thumnail" src="/image/{{ $food['image']}}" alt=""/>
+                </div>
             </div>
-            @endforeach
- 
-      </div>
+            <div class="col-lg-7 col-md-7 col-sm-6">
+                <h4 class="box-title  ">DETAI PRODUCT</h4>
+                <p>{{$food['detail']}}</p>
+                <h2 class="mt-5">
+                    Price<small class=" ml-5 text-success">{{$food['price']}}</small>
+                </h2>
+
+                <button class="btn btn-primary btn-rounded">Buy Now</button>
+                <h3 class="box-title mt-5">Key Highlights</h3>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-check text-success"></i>Sturdy structure</li>
+                    <li><i class="fa fa-check text-success"></i>Designed to foster easy portability</li>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn btn-primary btn-rounded"><a class="text" href="{{ route('food.index') }}"> back</a></button>
+        </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

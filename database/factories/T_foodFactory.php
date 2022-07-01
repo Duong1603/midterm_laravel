@@ -19,7 +19,8 @@ class T_foodFactory extends Factory
         return [
             'name'=> $this->faker->name(),
             'Price' => rand(1,999)."000000",
-            'image'=>'hinh '.rand(1,6).'.jpg'
+            'detail'=> $this->faker->paragraph(),
+            'image'=>'hinh '.rand(1,6).'.jpg',
         ];
     }
 }

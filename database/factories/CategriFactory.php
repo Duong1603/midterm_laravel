@@ -17,7 +17,7 @@ class CategriFactory extends Factory
     public function definition()
     {
         return [
-            'detail'=> $this->faker->paragraph(), 
+            'category'=> $this->faker->paragraph(), 
         ];
     }
 }

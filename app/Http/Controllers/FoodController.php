@@ -61,6 +61,7 @@ class FoodController extends Controller
         $food=new T_food();
         $food->name=$request->name;
         $food->price=$request->price;
+        $food->detail=$request->detail;
         $food->image=$name;
         $food->save();
     
@@ -75,8 +76,8 @@ class FoodController extends Controller
      */
     public function show($id)
     {
-        $food=T_food::find($id);
-        return view('Food',['food' => $food]);
+        $food = T_food::find($id);
+        return view('detail',['food'=>$food]);
     }
 
     /**

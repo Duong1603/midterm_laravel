@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-
+<style>
+    .text{
+      color: black;
+    }
+  </style>
 <body>
     <div class="container">
         @if ($errors->any())
@@ -42,13 +46,18 @@
                 <input type="text" name="price" class="form-control" id="formGroupExampleInput2"
                     placeholder="Another input">
             </div>
+            <div class="form-group">
+                <label for="detail">Detail</label>
+                <input type="text" name="detail" class="form-control" id="formGroupExampleInput2"
+                    placeholder="Another input">
+            </div>
             <div>
-                <button type="submit">submit</button>
+                <button class="btn btn-primary btn-rounded" type="submit">submit</button>
                 <br>
 
             </div>
         </form>
-        <button><a href="{{ route('food.index') }}"> back</a></button>
+        <button class="btn btn-primary btn-rounded"><a class="text" href="{{ route('food.index') }}"> back</a></button>
     </div>
 
     <!-- Optional JavaScript -->
