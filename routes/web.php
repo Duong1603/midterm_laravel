@@ -23,8 +23,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('food',FoodController::class);
-Route::get('{id}/Edit', [FoodController::class, "edit"]);
-Route::put('/Update/{id}', [FoodController::class, "update"]);
-Route::get('/Delete/{id}', [FoodController::class, "delete"]);
-Route::get("/Create", [FoodController::class, "create"]);
-Route::post("/Store", [FoodController::class, "store"]);
+// Route::get('{id}/Edit', [FoodController::class, "edit"]);
+// Route::put('/Update/{id}', [FoodController::class, "update"]);
+// Route::get('/Delete/{id}', [FoodController::class, "delete"]);
+// Route::get("/Create", [FoodController::class, "create"]);
+// Route::post("/Store", [FoodController::class, "store"]);
+Route::post('food/find', [FoodController::class,'searchByName']);
